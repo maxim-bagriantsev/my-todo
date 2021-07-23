@@ -22,22 +22,22 @@ export const TodoList = () => {
     };
 
     const hendleDeleteList = (id) => { // удаляем список дел
-        setAddList([
-            ...addList.slice(0, id),
-            ...addList.slice(id + 1)])
+        const result = [...addList];
+        result.splice(id, 1);
+        setAddList(result)
     }
 
     return (
         <div className="app">
-            <h1>Список дел</h1>
-            <Input style={{width: '20%'}} placeholder="Введи новое событие"
+            <h1 style={{textAlign: "center"}}>Список дел</h1>
+            <Input style={{width: '400px'}} placeholder="Введи новое событие"
                    value={value}
                    onChange={hendleItem}/>
             <Button type="primary"
                     onClick={hendleAddList}>Добавить</Button>
             <Button style={{marginLeft: '5px', backgroundColor: "tomato"}} type="primary"
                     onClick={hendleDeleteList}>Удалить</Button>
-            <p style={{marginTop: '10px', fontSize: '20px'}}>
+            <p style={{margin: '10px 0 0 10px', fontSize: '15px'}}>
                 {result}
             </p>
         </div>
