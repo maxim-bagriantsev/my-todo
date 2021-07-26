@@ -2,8 +2,10 @@ import React, {useState} from 'react';
 import 'antd/dist/antd.css';
 import './index.css';
 import {Input, Button} from 'antd';
+import {Item} from "./Item";
 
-export const TodoList = () => {
+
+export const TodoList = (props) => {
     const [value, setValue] = useState('') // тут будет лежать состояние введенное в input
     const [addList, setAddList] = useState([]) // состояние списка дел
 
@@ -38,7 +40,7 @@ export const TodoList = () => {
             <Button style={{marginLeft: '5px', backgroundColor: "tomato"}} type="primary"
                     onClick={hendleDeleteList}>Удалить</Button>
             <p style={{margin: '10px 0 0 10px', fontSize: '15px'}}>
-                {result}
+                <Item result={result}/>
             </p>
         </div>
     );
