@@ -1,9 +1,9 @@
 import React from 'react';
 import {TodoList} from "./components/TodoList/TodoList";
 
-export const App = () => {
+const App = () => {
     return (
         <TodoList/>
     )
-
 }
+export default App;
